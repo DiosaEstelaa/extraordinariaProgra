@@ -169,6 +169,7 @@ public class ejercicio_1 {
             bombillasPorDistrito(guardarResultado);
             
             
+            System.out.println(" Siento este examen Cristina, parece que no me ha servido de nada todo el repaso que he estado haciendo. Estoy cansada y bloqueada. Sorry");
             
 
         } catch (Exception e) {
