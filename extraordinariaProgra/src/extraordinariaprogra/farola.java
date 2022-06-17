@@ -48,7 +48,7 @@ public class farola {
         this.F = F;
         this.G = G;
         this.H = H;
-        this.id_Distrito_I = id_Distrito_I;
+        this.id_Distrito_I = Integer.parseInt(id_Distrito_I);
         this.J = J;
         this.K = K;
         this.L = L;
