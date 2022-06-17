@@ -17,8 +17,8 @@ public class farola {
     columna, en total son 12 apartados(columnas). Tal y como dice el enunciado
     solo nos interesan las columnas 2 y 9 (B y I).2 variables en total
      */
-    private String tipo;
-    private String id_Distrito;
+    private String tipo="";
+    private String id_Distrito="";
 
     /////////////////////////////////////
     //CONSTRUCTORES/////////////////////////////////////////////////////////////
