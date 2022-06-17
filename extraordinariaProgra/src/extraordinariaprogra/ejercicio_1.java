@@ -50,7 +50,8 @@ public class ejercicio_1 {
                     if (!celdas[3].equals("VIA_PAR,C,254")) {
                         farola infoFarola = new farola(celdas[0], celdas[1], celdas[2], celdas[3], celdas[4], celdas[5], celdas[6], celdas[7], celdas[8], celdas[9], celdas[10], celdas[11]);
                         listaDatos.add(infoFarola);
-                        System.out.println(infoFarola);
+                        //dejo comentado esto porque si no se carga mucho el programa, era para comprobar yo si se leia
+                        //System.out.println(infoFarola);
                     }//fin if 2
                 }//fin if 1
             }//fin while
@@ -59,7 +60,8 @@ public class ejercicio_1 {
             e.printStackTrace();
         }//fin try-catch
         return listaDatos;
-    }
+    }//fin función leer
+    
     //************************************************************************************************************************
     //************************************************************************************************************************
     //************************************************************************************************************************
