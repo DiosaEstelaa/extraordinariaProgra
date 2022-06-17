@@ -62,27 +62,29 @@ public class ejercicio_1 {
         return listaDatos;
     }//fin función leer
 
-    public static laFarolaMasPopular_y_Cantidad(ArrayList<farola> columnasFarolas_f) {
+    public static String laFarolaMasPopular_y_Cantidad(ArrayList<farola> columnasFarolas_f) {
         //variables
-        int numMayor=0;
+        int numMayor = 0;
         int numControl;
-        int contadorLed=0;
-        int contadorDescarga=0;
-        int contadoLedDescarga=0;
+        int contadorLed = 0;
+        int contadorDescarga = 0;
+        int contadoLedDescarga = 0;
         //objeto de tipo farola
-        farola laFarola = new farola();
-        for(farola farolita:columnasFarolas_f){
-            if(farolita.getTipo_B().equals("LED")){
+        String laFarola ;
+        for (farola farolita : columnasFarolas_f) {
+            if (farolita.getTipo_B().equals("LED")) {
                 contadorLed++;
             }
-            if(farolita.getTipo_B().equals("DESCARGA")){
+            if (farolita.getTipo_B().equals("DESCARGA")) {
                 contadorDescarga++;
             }
-            if(farolita.getTipo_B().equals("LED-DESCARGA")){
+            if (farolita.getTipo_B().equals("LED-DESCARGA")) {
                 contadoLedDescarga++;
             }
         }//fin for-each
-        
+
+        laFarola= "led:" + contadorLed + "descarga:" + contadorDescarga +"led-descarga:" + contadoLedDescarga;
+        return laFarola;
 
     }//fin funció laFarolaMasPopular_y_Cantidad
     //************************************************************************************************************************
@@ -120,6 +122,8 @@ public class ejercicio_1 {
         try {
 
             archivoLucesFarola = leer(archivo);
+            System.out.println("");
+            String farolaaaaaaaaa= laFarolaMasPopular_y_Cantidad(archivoLucesFarola);
         } catch (Exception e) {
             System.err.println("errooooooooooooooooooooooor");
             e.printStackTrace();
