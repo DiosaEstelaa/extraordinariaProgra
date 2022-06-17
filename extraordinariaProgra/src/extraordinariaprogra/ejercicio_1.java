@@ -76,9 +76,9 @@ public class ejercicio_1 {
                     x.put(d.getTipo_B(), d.getId_Distrito_I());
                 }
             }
-            for (String distrito : x.keySet()) {
-                /*int intervenciones = x.get(distrito);
-                System.out.println("ID DISTRITO: " + distrito + "," + " NUMERO DE INTERVENCIONES: " + intervenciones);*/
+            for (String tipoDeBombilllla : x.keySet()) {
+                String cantidadLuces = x.get(tipoDeBombilllla);
+                System.out.println("tipo de bombilla: " + tipoDeBombilllla + "," + " cantidad luces: " + cantidadLuces);
             }
 
         } catch (Exception e) {
@@ -165,7 +165,8 @@ public class ejercicio_1 {
                 System.out.println("la luz que más tiene es led-descarga con un total de " + contadorLedDescarga);
             }
             
-          
+            ArrayList<farola> guardarResultado = leer(archivo);
+            bombillasPorDistrito(guardarResultado);
             
             
             
