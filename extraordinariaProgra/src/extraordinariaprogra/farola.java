@@ -17,8 +17,8 @@ public class farola {
     columna, en total son 12 apartados(columnas). Tal y como dice el enunciado
     solo nos interesan las columnas 2 y 9 (B y I).2 variables en total
      */
-    private String tipo="";
-    private String id_Distrito="";
+    private String tipo = "";
+    private String id_Distrito = "";
 
     /////////////////////////////////////
     //CONSTRUCTORES/////////////////////////////////////////////////////////////
@@ -26,16 +26,16 @@ public class farola {
     //el vacío siempre lo pongo por si acaso
     public farola() {
     }
+
     //el de con todo
     public farola(String tipo, String id_Distrito) {
         this.tipo = tipo;
         this.id_Distrito = id_Distrito;
     }
-    
+
     /////////////////////////////////////
     //GETTERS Y SETTERS/////////////////////////////////////////////////////////
     /////////////////////////////////////
-
     public String getTipo() {
         return tipo;
     }
@@ -51,15 +51,13 @@ public class farola {
     public void setId_Distrito(String id_Distrito) {
         this.id_Distrito = id_Distrito;
     }
-    
+
     /////////////////////////////////////
     //FUNCIONES/MÉTODOS/////////////////////////////////////////////////////////
     /////////////////////////////////////
-
     @Override
     public String toString() {
-        return "farola{" + " de tipo= " + tipo + " e id_Distrito =" + id_Distrito + '}';
+        return "la farola " + " de tipo= " + tipo + " e id_Distrito =" + id_Distrito;
     }
-    
 
 }//fin class
