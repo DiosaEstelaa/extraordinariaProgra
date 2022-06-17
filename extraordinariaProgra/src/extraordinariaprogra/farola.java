@@ -15,7 +15,8 @@ public class farola {
     /////////////////////////////////////
     /*el documento con el que vamos a trabajar es como un excel, va por filas y
     columna, en total son 12 apartados(columnas). Tal y como dice el enunciado
-    solo nos interesan las columnas 2 y 9 (B y I).2 variables en total
+    solo nos interesan las columnas 2 y 9 (B y I).
+    12 variables en total
      */
     private String A;
     private String tipo_B;

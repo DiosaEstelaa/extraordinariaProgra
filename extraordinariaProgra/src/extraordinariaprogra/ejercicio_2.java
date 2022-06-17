@@ -34,19 +34,31 @@ public class ejercicio_2 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+
         //declaro mi scanner 
         Scanner leer = new Scanner(System.in);
-        
+
         //variables
         int anio;
-        int casos;
+        int casosDePrueba;
+
         System.out.println("¿cuántos casos de prueba quieres procesar?");
         //lo leemos
-        casos = leer.nextInt();
+        casosDePrueba = leer.nextInt();
+        System.out.println("******************************************");
 
-        while(casos--!=0){
+        while (casosDePrueba-- != 0) {
+
+            System.out.println("Introduce un año:");
+            anio = leer.nextInt();
+
             
-            
+            int resultado = (anio / 100) + (anio % 100 != 0 ? 1 : 0);//?=es para que de una opción u otra, 1 = false, 0=true
+            /*(condition)?(true branch):(false branch)
+                param1        param2        param3*/
+            System.out.println("el resultado es: " + resultado);
+            System.out.println("-------------------------");
+
         }//fin while
     }
 
