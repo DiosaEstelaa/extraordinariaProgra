@@ -62,15 +62,14 @@ public class ejercicio_1 {
         return listaDatos;
     }//fin función leer
 
-    public static String laFarolaMasPopular_y_Cantidad(ArrayList<farola> columnasFarolas_f) {
+    /*public static String laFarolaMasPopular_y_Cantidad(ArrayList<farola> columnasFarolas_f) {
         //variables
-        int numMayor = 0;
-        int numControl;
+
         int contadorLed = 0;
         int contadorDescarga = 0;
         int contadoLedDescarga = 0;
         //objeto de tipo farola
-        String laFarola ;
+        String laFarola;
         for (farola farolita : columnasFarolas_f) {
             if (farolita.getTipo_B().equals("LED")) {
                 contadorLed++;
@@ -83,10 +82,10 @@ public class ejercicio_1 {
             }
         }//fin for-each
 
-        laFarola= "led:" + contadorLed + "descarga:" + contadorDescarga +"led-descarga:" + contadoLedDescarga;
+        laFarola = "led:" + contadorLed + "descarga:" + contadorDescarga + "led-descarga:" + contadoLedDescarga;
         return laFarola;
 
-    }//fin funció laFarolaMasPopular_y_Cantidad
+    }//fin funció laFarolaMasPopular_y_Cantidad*/
     //************************************************************************************************************************
     //************************************************************************************************************************
     //************************************************************************************************************************
@@ -95,7 +94,6 @@ public class ejercicio_1 {
     //************************************************************************************************************************
     //************************************************************************************************************************
     //************************************************************************************************************************        
-
     /////////////////////////////////////
     //MAIN//////////////////////////////////////////////////////////////////////
     /////////////////////////////////////
@@ -121,9 +119,41 @@ public class ejercicio_1 {
         //para el manejo de errores trabajaremos el código en un try-catch
         try {
 
-            archivoLucesFarola = leer(archivo);
+            // archivoLucesFarola = leer(archivo);
             System.out.println("");
-            String farolaaaaaaaaa= laFarolaMasPopular_y_Cantidad(archivoLucesFarola);
+
+            // Creamos un FileReader para leer del fichero en forma de Bytes 
+            FileReader fr = new FileReader(archivo);
+            /* Creamos un BufferedReader a partir del FileReader para poder leer caracteres */
+            BufferedReader br = new BufferedReader(fr);
+
+            //String farolaaaaaaaaa = laFarolaMasPopular_y_Cantidad(archivoLucesFarola);
+            String linea = null;
+            int contadorLed = 0;
+            int contadorDescarga = 0;
+            int contadorLedDescarga = 0;
+
+            while ((linea = br.readLine()) != null) {
+                String[] arrayPalabras = linea.split(";");
+
+                for (String palabra : arrayPalabras) {
+
+                    if (palabra.equals("LED")) {
+                        contadorLed++;
+                    }
+
+                    if (palabra.equals("DESCARGA")) {
+                        contadorDescarga++;
+                    }
+
+                    if (palabra.equals("LED-DESCARGA")) {
+                        contadorLedDescarga++;
+                    }
+                }
+            }//fin while 
+
+            System.out.println("hay de led: " + contadorLed + ", de descarga hay : " + contadorDescarga + " y de led-descarga: " + contadorLedDescarga);
+
         } catch (Exception e) {
             System.err.println("errooooooooooooooooooooooor");
             e.printStackTrace();
