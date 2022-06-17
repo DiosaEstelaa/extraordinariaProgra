@@ -39,7 +39,7 @@ public class ejercicio_2 {
         Scanner leer = new Scanner(System.in);
 
         //variables
-        int anio;
+        int elanio;
         int casosDePrueba;
 
         System.out.println("¿cuántos casos de prueba quieres procesar?");
@@ -50,10 +50,10 @@ public class ejercicio_2 {
         while (casosDePrueba-- != 0) {
 
             System.out.println("Introduce un año:");
-            anio = leer.nextInt();
+            elanio = leer.nextInt();
 
             
-            int resultado = (anio / 100) + (anio % 100 != 0 ? 1 : 0);//?=es para que de una opción u otra, 1 = false, 0=true
+            int resultado = (elanio / 100) + (elanio % 100 != 0 ? 1 : 0);//?=es para que de una opción u otra, 1 = false, 0=true
             /*(condition)?(true branch):(false branch)
                 param1        param2        param3*/
             System.out.println("el resultado es: " + resultado);
