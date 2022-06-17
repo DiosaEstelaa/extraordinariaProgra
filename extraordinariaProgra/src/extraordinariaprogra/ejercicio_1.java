@@ -63,15 +63,14 @@ public class ejercicio_1 {
         return listaDatos;
     }//fin función leer
 
-    
-   public static void bombillasPorDistrito(ArrayList<farola> luces) {
+    public static void bombillasPorDistrito(ArrayList<farola> luces) {
         try {
             HashMap<String, String> x = new HashMap<String, String>();
-           
+
             for (farola d : luces) {
 
                 if (x.containsKey(d.getTipo_B())) {
-                    x.replace(d.getTipo_B(), d.getId_Distrito_I()+ x.get(d.getId_Distrito_I()));
+                    x.replace(d.getTipo_B(), d.getId_Distrito_I() + x.get(d.getId_Distrito_I()));
                 } else {
                     x.put(d.getTipo_B(), d.getId_Distrito_I());
                 }
@@ -164,13 +163,11 @@ public class ejercicio_1 {
             if (contadorLedDescarga > contadorLed && contadorLedDescarga > contadorDescarga) {
                 System.out.println("la luz que más tiene es led-descarga con un total de " + contadorLedDescarga);
             }
-            
+
             ArrayList<farola> guardarResultado = leer(archivo);
             bombillasPorDistrito(guardarResultado);
-            
-            
+
             System.out.println(" Siento este examen Cristina, parece que no me ha servido de nada todo el repaso que he estado haciendo. Estoy cansada y bloqueada. Sorry");
-            
 
         } catch (Exception e) {
             System.err.println("errooooooooooooooooooooooor");
