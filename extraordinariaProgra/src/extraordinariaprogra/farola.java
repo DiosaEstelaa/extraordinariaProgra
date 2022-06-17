@@ -17,8 +17,18 @@ public class farola {
     columna, en total son 12 apartados(columnas). Tal y como dice el enunciado
     solo nos interesan las columnas 2 y 9 (B y I).2 variables en total
      */
-    private String tipo = "";
-    private String id_Distrito = "";
+    private String A;
+    private String tipo_B;
+    private String C;
+    private String D;
+    private String E;
+    private String F;
+    private String G;
+    private String H;
+    private String id_Distrito_I;
+    private String J;
+    private String K;
+    private String L;
 
     /////////////////////////////////////
     //CONSTRUCTORES/////////////////////////////////////////////////////////////
@@ -28,36 +38,88 @@ public class farola {
     }
 
     //el de con todo
-    public farola(String tipo, String id_Distrito) {
-        this.tipo = tipo;
-        this.id_Distrito = id_Distrito;
+    public farola(String A, String tipo_B, String C, String D, String E, String F, String G, String H, String id_Distrito_I, String J, String K, String L) {
+        this.A = A;
+        this.tipo_B = tipo_B;
+        this.C = C;
+        this.D = D;
+        this.E = E;
+        this.F = F;
+        this.G = G;
+        this.H = H;
+        this.id_Distrito_I = id_Distrito_I;
+        this.J = J;
+        this.K = K;
+        this.L = L;
+    }
+
+    //solo tipo e id_distrito
+    public farola(String tipo_B, String id_Distrito_I) {
+        this.tipo_B = tipo_B;
+        this.id_Distrito_I = id_Distrito_I;
     }
 
     /////////////////////////////////////
     //GETTERS Y SETTERS/////////////////////////////////////////////////////////
     /////////////////////////////////////
-    public String getTipo() {
-        return tipo;
+    
+    
+    public String getA() {
+        return A;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public String getTipo_B() {
+        return tipo_B;
     }
 
-    public String getId_Distrito() {
-        return id_Distrito;
+    public String getC() {
+        return C;
     }
 
-    public void setId_Distrito(String id_Distrito) {
-        this.id_Distrito = id_Distrito;
+    public String getD() {
+        return D;
     }
 
+    public String getE() {
+        return E;
+    }
+
+    public String getF() {
+        return F;
+    }
+
+    public String getG() {
+        return G;
+    }
+
+    public String getH() {
+        return H;
+    }
+
+    public String getId_Distrito_I() {
+        return id_Distrito_I;
+    }
+
+    public String getJ() {
+        return J;
+    }
+
+    public String getK() {
+        return K;
+    }
+
+    public String getL() {
+        return L;
+    }
+    
     /////////////////////////////////////
     //FUNCIONES/MÉTODOS/////////////////////////////////////////////////////////
     /////////////////////////////////////
+
     @Override
     public String toString() {
-        return "la farola " + " de tipo= " + tipo + " e id_Distrito =" + id_Distrito;
+        return "farola de tipo = " + tipo_B + " tien id_Distrito = " + id_Distrito_I ;
     }
+    
 
 }//fin class

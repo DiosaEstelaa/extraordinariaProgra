@@ -4,6 +4,14 @@
  */
 package extraordinariaprogra;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
+
 /**
  *
  * @author DAW
@@ -13,7 +21,6 @@ public class ejercicio_1 {
     /**
      * @param args the command line arguments
      */
-    
     /*
     Queremos mostrar un resumen de las farolas que hay en Madrid:
     -De qué tipo hay más farolas y cuántas. Por ejemplo, hay más de tipo LED y son 10000.
@@ -26,13 +33,33 @@ public class ejercicio_1 {
     Entrega:
     -El código comprimido
     -Y el enlace a tu repositorio en GitHub*/
-    
     //************************************************************************************************************************
     /////////////////////////////////////
     //FUNCIONES/MÉTODOS/////////////////////////////////////////////////////////
     /////////////////////////////////////
-    
-    public static
+    public static ArrayList<farola> leer(File fichero_f) throws FileNotFoundException, IOException {
+        ArrayList<farola> listaDatos = new ArrayList<farola>();
+        try {
+            FileReader fr = new FileReader(fichero_f);
+            BufferedReader bf = new BufferedReader(fr);
+            String datos;
+
+            while ((datos = bf.readLine()) != null) {
+                String[] celdas = datos.split(";");
+                if (celdas.length > 1) {
+                    if (!celdas[3].equals("VIA_PAR,C,254")) {
+                        farola infoFarola = new farola(celdas[0], celdas[1], celdas[2], celdas[3], celdas[4], celdas[5], celdas[6], celdas[7], celdas[8], celdas[9], celdas[10], celdas[11]);
+                        listaDatos.add(infoFarola);
+                        System.out.println(infoFarola);
+                    }//fin if 2
+                }//fin if 1
+            }//fin while
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }//fin try-catch
+        return listaDatos;
+    }
     //************************************************************************************************************************
     //************************************************************************************************************************
     //************************************************************************************************************************
@@ -41,14 +68,31 @@ public class ejercicio_1 {
     //************************************************************************************************************************
     //************************************************************************************************************************
     //************************************************************************************************************************        
-            
+
     /////////////////////////////////////
     //MAIN//////////////////////////////////////////////////////////////////////
     /////////////////////////////////////
     public static void main(String[] args) {
         // TODO code application logic here
-        
-        
-        
+
+        File archivo;
+        do {
+            Scanner leer2 = new Scanner(System.in);
+            //ordenador clase:
+            archivo = new File("C:\\Users\\DAW\\Desktop\\extraordinariaProgra\\extraordinariaProgra\\faroleo\\DATOS_ABIERTOS_UNIDAD_LUMINOSA_.csv");
+            if (!archivo.exists()) {
+                System.err.println("El archivo no existe, prueba de nuevo.");
+            }//fin if
+        } while (!archivo.exists());
+
+        //para el manejo de errores trabajaremos el código en un try-catch
+        try {
+
+            leer(archivo);
+        } catch (Exception e) {
+            System.err.println("errooooooooooooooooooooooor");
+            e.printStackTrace();
+        }
+
     }//fin main
 }//fin class
