@@ -51,7 +51,7 @@ public class ejercicio_1 {
                         farola infoFarola = new farola(celdas[0], celdas[1], celdas[2], celdas[3], celdas[4], celdas[5], celdas[6], celdas[7], celdas[8], celdas[9], celdas[10], celdas[11]);
                         listaDatos.add(infoFarola);
                         //dejo comentado esto porque si no se carga mucho el programa, era para comprobar yo si se leia
-                        //System.out.println(infoFarola);
+                        System.out.println(infoFarola);
                     }//fin if 2
                 }//fin if 1
             }//fin while
@@ -62,6 +62,9 @@ public class ejercicio_1 {
         return listaDatos;
     }//fin función leer
     
+    public static void laFarolaMasPopular_y_Cantidad(ArrayList<farola> columnasFarolas_f){
+    
+}
     //************************************************************************************************************************
     //************************************************************************************************************************
     //************************************************************************************************************************
@@ -78,6 +81,12 @@ public class ejercicio_1 {
         // TODO code application logic here
 
         File archivo;
+        
+        /*
+        trabajamos con el excel de datos de luces donde hay 12 columnas. Vamos a meter
+        cada columna en un ArrayList que llamaremos "archivoLucesFarola"
+         */
+        ArrayList<farola> archivoLucesFarola = new ArrayList<farola>();
         do {
             Scanner leer2 = new Scanner(System.in);
             //ordenador clase:
@@ -90,7 +99,7 @@ public class ejercicio_1 {
         //para el manejo de errores trabajaremos el código en un try-catch
         try {
 
-            leer(archivo);
+            archivoLucesFarola= leer(archivo);
         } catch (Exception e) {
             System.err.println("errooooooooooooooooooooooor");
             e.printStackTrace();
