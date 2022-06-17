@@ -10,6 +10,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 /**
@@ -62,30 +63,30 @@ public class ejercicio_1 {
         return listaDatos;
     }//fin función leer
 
-    /*public static String laFarolaMasPopular_y_Cantidad(ArrayList<farola> columnasFarolas_f) {
-        //variables
+    
+   public static void bombillasPorDistrito(ArrayList<farola> luces) {
+        try {
+            HashMap<String, String> x = new HashMap<String, String>();
+           
+            for (farola d : luces) {
 
-        int contadorLed = 0;
-        int contadorDescarga = 0;
-        int contadoLedDescarga = 0;
-        //objeto de tipo farola
-        String laFarola;
-        for (farola farolita : columnasFarolas_f) {
-            if (farolita.getTipo_B().equals("LED")) {
-                contadorLed++;
+                if (x.containsKey(d.getTipo_B())) {
+                    x.replace(d.getTipo_B(), d.getId_Distrito_I()+ x.get(d.getId_Distrito_I()));
+                } else {
+                    x.put(d.getTipo_B(), d.getId_Distrito_I());
+                }
             }
-            if (farolita.getTipo_B().equals("DESCARGA")) {
-                contadorDescarga++;
+            for (String distrito : x.keySet()) {
+                /*int intervenciones = x.get(distrito);
+                System.out.println("ID DISTRITO: " + distrito + "," + " NUMERO DE INTERVENCIONES: " + intervenciones);*/
             }
-            if (farolita.getTipo_B().equals("LED-DESCARGA")) {
-                contadoLedDescarga++;
-            }
-        }//fin for-each
 
-        laFarola = "led:" + contadorLed + "descarga:" + contadorDescarga + "led-descarga:" + contadoLedDescarga;
-        return laFarola;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.out.println("**************************************");
+    }
 
-    }//fin funció laFarolaMasPopular_y_Cantidad*/
     //************************************************************************************************************************
     //************************************************************************************************************************
     //************************************************************************************************************************
@@ -163,6 +164,10 @@ public class ejercicio_1 {
             if (contadorLedDescarga > contadorLed && contadorLedDescarga > contadorDescarga) {
                 System.out.println("la luz que más tiene es led-descarga con un total de " + contadorLedDescarga);
             }
+            
+          
+            
+            
             
 
         } catch (Exception e) {
