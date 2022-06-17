@@ -162,8 +162,8 @@ public class ejercicio_1 {
             }
             if (contadorLedDescarga > contadorLed && contadorLedDescarga > contadorDescarga) {
                 System.out.println("la luz que más tiene es led-descarga con un total de " + contadorLedDescarga);
-
             }
+            
 
         } catch (Exception e) {
             System.err.println("errooooooooooooooooooooooor");
