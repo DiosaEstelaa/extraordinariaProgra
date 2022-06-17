@@ -154,6 +154,17 @@ public class ejercicio_1 {
 
             System.out.println("hay de led: " + contadorLed + ", de descarga hay : " + contadorDescarga + " y de led-descarga: " + contadorLedDescarga);
 
+            if (contadorLed > contadorDescarga && contadorLed > contadorLedDescarga) {
+                System.out.println("la luz que más tiene es led con un total de " + contadorLed);
+            }
+            if (contadorDescarga > contadorLed && contadorDescarga > contadorLedDescarga) {
+                System.out.println("la luz que más tiene es descarga con un total de " + contadorDescarga);
+            }
+            if (contadorLedDescarga > contadorLed && contadorLedDescarga > contadorDescarga) {
+                System.out.println("la luz que más tiene es led-descarga con un total de " + contadorLedDescarga);
+
+            }
+
         } catch (Exception e) {
             System.err.println("errooooooooooooooooooooooor");
             e.printStackTrace();
